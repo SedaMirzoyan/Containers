@@ -65,8 +65,8 @@ template <typename T>
 List<T>::List(T elem)
 {
 	std::cout << __func__ << std::endl;
-	m_head = new Node(elem);
-	m_tail = new Node(elem);
+	m_head = new Node<T>(elem);
+	m_tail = new Node<T>(elem);
 
 	m_length = m_length++;
 }
