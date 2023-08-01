@@ -97,6 +97,7 @@ Vector<T>& Vector<T>::operator=(const Vector& ob)
     {
         std::cout << __func__ << "\n";
         this->m_size = ob.m_size;
+        this->m_capacity = ob.m_capacity;
         delete[] m_ptr;
 
         this->m_ptr = new T[this->m_size];
@@ -119,6 +120,7 @@ Vector<T>& Vector<T>::operator =(Vector&& ob)
     {
         delete this->m_ptr;
         this->m_size = ob.m_size;
+        this->m_capacity = ob.m_capacity;
 
         this->m_ptr = ob.m_ptr;
 
