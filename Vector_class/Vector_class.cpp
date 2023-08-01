@@ -85,6 +85,7 @@ Vector<T>::Vector<T>(Vector&& ob) :m_size(ob.m_size), m_capacity(ob.m_capacity)
 
         ob.m_ptr = nullptr;
         ob.m_size = 0;
+        ob.m_capacity = 0;
     }
 }
 
@@ -126,6 +127,7 @@ Vector<T>& Vector<T>::operator =(Vector&& ob)
 
         ob.m_ptr = nullptr;
         ob.m_size = 0;
+        ob.m_capacity = 0;
     }
     return *this;
 }
@@ -403,7 +405,7 @@ int main()
     ob.at(1) = 8;
     ob.printVector();
 
-    /*Vector<int> ob_cp(ob);
+    Vector<int> ob_cp(ob);
     ob > ob_cp;
 
     Vector<int> ob1;
@@ -412,7 +414,7 @@ int main()
     Vector<double> m_ob1(3);
     m_ob1 = std::move(Vector<double>(5));
 
-    Vector<std::string> m_ob2 = std::move(Vector<std::string>(2)); */
+    Vector<std::string> m_ob2 = std::move(Vector<std::string>(2)); 
 
     ob.pushBack(9);
     ob.printVector();
@@ -430,6 +432,7 @@ int main()
     {
         std::cout << "Vector is empty";
     }
+    std::cout << std::endl;
 
     std::cout << "erase second element\n";
     ob.erase(2);
