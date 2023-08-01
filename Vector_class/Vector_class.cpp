@@ -348,7 +348,7 @@ int Vector<T>::getCapacity()const
 template <typename T>
 void Vector<T>::erase(int index)
 {
-    if (index > m_size)
+    if (index > m_size || index < 0)
     {
         std::cout << "Invalid index\n";
     }
