@@ -160,7 +160,7 @@ void List<T>::removeFromBeginning()
 {
 	if (m_length == 0)
 	{
-		std::cout << "Nothing to delete, queue is empty\n";
+		std::cout << "Nothing to delete, list is empty\n";
 	}
 	Node<T>* tmp = m_head;
 	
@@ -175,7 +175,7 @@ void List<T>::removeAtIndex(int index)
 {
 	if (m_length == 0)
 	{
-		std::cout << "Nothing to delete, queue is empty\n";
+		std::cout << "Nothing to delete, list is empty\n";
 	}
 
 	Node<T>* tmp = m_head;
