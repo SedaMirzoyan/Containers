@@ -81,7 +81,7 @@ Node<T>* Stack<T>::createElements(const T& elem)
 template <typename T>
 void Stack<T>::setStackLength(int l)
 {
-    List::setLength();
+    List<T>::setLength();
 }
 
 
