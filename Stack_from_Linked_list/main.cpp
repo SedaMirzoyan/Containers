@@ -2,6 +2,8 @@
 #include "List.h"
 #include "Stack.h"
 
+//based on singly linked list
+
 int main()
 {
 	Stack<int> stack_ob;
