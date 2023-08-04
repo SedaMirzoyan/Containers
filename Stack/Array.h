@@ -1,5 +1,5 @@
-#ifndef ARRAY_CLASS_H
-#define ARRAY_CLASS_H
+#ifndef ARRAY_H
+#define ARRAY_H
 
 #include <iostream>
 
