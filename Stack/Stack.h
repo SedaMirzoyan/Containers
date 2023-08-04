@@ -1,5 +1,5 @@
-#ifndef STACK_CLASS_H
-#define STACK_CLASS_H
+#ifndef STACK_H
+#define STACK_H
 
 #include "Array.h"
 
