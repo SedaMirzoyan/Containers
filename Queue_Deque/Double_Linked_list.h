@@ -42,7 +42,7 @@ private:
 public:
 	Double_Linked_List();
 	Double_Linked_List(T elem);
-	~Double_Linked_List();
+	virtual ~Double_Linked_List();
 
 	Node<T>* createNode(T elem);
 	void insertAtBeginning(T elem);
