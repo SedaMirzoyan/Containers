@@ -238,6 +238,31 @@ void List<T>::print()
 }
 
 
+template <typename T>
+void List<T>::reverse() {
+
+	std::stack<Node<T>*> st;
+	Node<T>* tmp = m_head;
+
+	while (tmp->next != nullptr)	
+	{
+		st.push(tmp);
+		tmp = tmp->next;
+	}
+
+	m_head = tmp;
+
+	while (!st.empty())
+	{
+		tmp->next = st.top();
+		st.pop();
+		tmp = tmp->next;
+	}
+
+	tmp->next = nullptr; 
+}
+
+
 int main()
 {
 	List<int> l1;
@@ -270,6 +295,10 @@ int main()
 
 	l1.removeFromEnd();
 	std::cout << l1.getLength() << std::endl;
+	l1.print();
+
+	std::cout << "reverse" << std::endl;
+	l1.reverse();
 	l1.print();
 
 	return 0;
