@@ -50,6 +50,7 @@ public:
 	void removeFromEnd();
 	void removeFromBeginning();
 	void removeAtIndex(int index);
+	void reverse();
 };
 
 template <typename T>
