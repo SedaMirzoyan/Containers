@@ -246,7 +246,7 @@ void List<T>::reverse() {
 	std::stack<Node<T>*> st;
 	Node<T>* tmp = m_head;
 
-	while (tmp->next != nullptr)	
+	while (tmp->next != nullptr)
 	{
 		st.push(tmp);
 		tmp = tmp->next;
@@ -261,9 +261,8 @@ void List<T>::reverse() {
 		tmp = tmp->next;
 	}
 
-	tmp->next = nullptr; 
+	tmp->next = nullptr;
 }
-
 
 int main()
 {
