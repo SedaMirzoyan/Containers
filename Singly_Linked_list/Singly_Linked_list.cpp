@@ -194,8 +194,6 @@ void List<T>::removeAtIndex(int index)
 	}
 
 	prev->next = tmp->next;
-	//m_tail = prev;
-	//m_tail->next = prev->next;
 	tmp->next = nullptr;
 	m_length--;
 }
