@@ -40,10 +40,10 @@ public:
 	List(T elem);
 	~List();
 
-	Node<T>* createNode(T elem);
-	void insertAtBeginning(T elem);
-	void insertAtIndex(T elem, int index);
-	void insertAtEnd(T elem);
+	Node<T>* createNode(const T& elem);
+	void insertAtBeginning(const T& elem);
+	void insertAtIndex(const T& elem, int index);
+	void insertAtEnd(const T& elem);
 	void print();
 	int getLength()const;
 	void setLength(int l);
@@ -99,7 +99,7 @@ int List<T>::getLength()const
 
 
 template <typename T>
-Node<T>* List<T>::createNode(T elem)
+Node<T>* List<T>::createNode(const T& elem)
 {
 	Node<T>* new_node = new Node<T>;
 	if (m_head == nullptr)
@@ -114,7 +114,7 @@ Node<T>* List<T>::createNode(T elem)
 
 
 template <typename T>
-void List<T>::insertAtBeginning(T elem)
+void List<T>::insertAtBeginning(const T& elem)
 {
 	Node<T>* new_node = createNode(elem);
 
@@ -125,7 +125,7 @@ void List<T>::insertAtBeginning(T elem)
 }
 
 template <typename T>
-void List<T>::insertAtEnd(T elem)
+void List<T>::insertAtEnd(const T& elem)
 {
 	Node<T>* new_node = createNode(elem);
 
@@ -138,7 +138,7 @@ void List<T>::insertAtEnd(T elem)
 
 
 template <typename T>
-void List<T>::insertAtIndex(T elem, int index)
+void List<T>::insertAtIndex(const T& elem, int index)
 {
 	Node<T>* new_node = createNode(elem);
 
