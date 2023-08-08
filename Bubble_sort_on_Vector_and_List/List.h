@@ -106,14 +106,14 @@ void List<T>::insertAtBeginning(const T& elem)
 template <typename T>
 void List<T>::insertAtEnd(const T& elem)
 {
-	Node<T>* newNode = new Node<T>;
-	newNode->val = elem;
-	newNode->next = NULL;
+	Node<T>* new_node = new Node<T>;
+	new_node->val = elem;
+	new_node->next = NULL;
 
 	Node<T>* temp = m_head;
 	if (m_head == NULL)
 	{
-		m_head = newNode;
+		m_head = new_node;
 	}
 	else
 	{
@@ -121,7 +121,7 @@ void List<T>::insertAtEnd(const T& elem)
 		{
 			temp = temp->next;
 		}
-		temp->next = newNode;
+		temp->next = new_node;
 	}
 }
 
