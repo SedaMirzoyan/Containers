@@ -257,7 +257,7 @@ int main()
 	l1.insertAtIndex(51, 4);
 	l1.print();
 
-	List<int> l_ob(l1);
+	//List<int> l_ob(l1);
 
 	l1.removeFromBeginning();
 	l1.print();
