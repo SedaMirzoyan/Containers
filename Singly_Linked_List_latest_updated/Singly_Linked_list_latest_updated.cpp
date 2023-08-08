@@ -47,6 +47,7 @@ public:
 	void removeFromBeginning();
 	void removeAtIndex(int index);
 	void reverse();
+	void findNthElementFromEnd(unsigned int n);
 };
 
 template <typename T>
@@ -240,6 +241,27 @@ void List<T>::reverse() {
 }
 
 
+template <typename T>
+void List<T>::findNthElementFromEnd(unsigned int n)
+{
+	Node<T>* tmp = m_head;
+	Node<T>* prev = m_head;
+	unsigned int count = 0;
+
+	while (tmp->next != nullptr)
+	{
+		tmp = tmp->next;
+		count++;
+
+		if (count >= n)
+		{
+			prev = prev->next;
+		}
+	}
+	std::cout << "\nElement is  " << prev->val << "\n";
+}
+
+
 
 int main()
 {
@@ -273,6 +295,10 @@ int main()
 
 	std::cout << "reverse" << std::endl;
 	l1.reverse();
+	l1.print();
+
+	unsigned int n = 2;
+	l1.findNthElementFromEnd(n);
 	l1.print();
 
 	return 0;
