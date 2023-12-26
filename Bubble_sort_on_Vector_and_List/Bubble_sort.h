@@ -25,7 +25,7 @@ void bubbleSortVec(const T& arr, int n)
            std::cout << "vector is already swapped\n";
            break;
        }
-       std::cout << "i = " << i << "\n";
+       //std::cout << "i = " << i << "\n";
     }
 
 	for (int i = 0; i < n; ++i)
@@ -37,50 +37,36 @@ void bubbleSortVec(const T& arr, int n)
 
 
 template <typename T>
-void swapPtr(Node<T>* ptr1, Node<T>* ptr2)
+void bubbleSortList(const List<T>& list_ob)
 {
-    Node<T>* tmp = ptr1->next;
-    ptr1 -> next = ptr2;
-    ptr2 -> next = tmp;
-}
-
-/*
-template <typename T>   
-void bubbleSortList(const List<T>& list_ob) //not completed
-{
-    int n = list_ob.getListLength();
-    std::cout << "n = " << n << "\n";
-
-    Node<T>* tmp = list_ob.getHeadNode();
-    Node<T>* prev = list_ob.getHeadNode();
     Node<T>* head = list_ob.getHeadNode();
 
-    for (int i = 0; i < n - 1; ++i)
-    {
-        prev = head;
+    Node<T>* prev = nullptr;
+    Node<T>* curr = nullptr;
+    Node<T>* swp_ptr = list_ob.getHeadNode();
+    bool swapped;
+    T swp_data;
 
-        for (int j = 0; j < n - i - 1; ++j)
+    do {
+        swapped = false;
+        prev = list_ob.getHeadNode();
+
+        while (prev != nullptr && prev->next != NULL)
         {
-            prev = tmp;
-            tmp = tmp->next;
+            curr = prev->next;
 
-            if(prev->val > tmp->val)
+            if (prev->val > curr->val)
             {
-                //swapPtr(prev, tmp);
-                Node<T>* other_ptr = tmp->next;
-                tmp->next = prev;
-                prev->next = other_ptr;
-            }
-        }
-    }
+                swp_data = prev->val;
+                prev->val = curr->val;
+                curr->val = swp_data;
 
-    tmp = list_ob.getHeadNode();
-    while (tmp != nullptr)
-    {
-        tmp = tmp->next;
-        std::cout << tmp->val << " ";
-    }
-}*/
+                swapped = true;
+            }
+            prev = prev->next;
+        }
+    } while (swapped);
+}
 
 
 #endif //BUBBLE_SORT_H
