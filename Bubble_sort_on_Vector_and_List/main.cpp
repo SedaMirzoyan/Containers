@@ -49,10 +49,13 @@ int main()
 	l1.reverse();
 	l1.print();
 
+	l1.isCycle();
+
 	std::cout << "Bubble sort for Vector\n";
     bubbleSortVec(ob, n);
 	std::cout << "Bubble sort for List\n";
-    //bubbleSortList(l1);
+    bubbleSortList(l1);
+	l1.print();
 
     return 0;
 }
