@@ -54,6 +54,7 @@ public:
 	bool operator <(const List<T>& ob);
 	Node<T>* getHeadNode()const;
 	int getListLength()const;
+	bool isCycle();
 };
 
 template <typename T>
@@ -294,5 +295,32 @@ int List<T>::getListLength()const
 	return counter;
 }
 
+template <typename T>
+bool List<T>::isCycle()
+{
+	Node<T>* fast = m_head;
+	Node<T>* slow = m_head;
+
+	bool is_cycle = false;
+
+	while (fast != NULL && slow != NULL && fast->next != NULL)
+	{
+		fast = fast->next->next;
+		slow = slow->next;
+
+		if (fast == slow)
+		{
+			is_cycle = true;
+			std::cout << "Loop is found\n";
+			break;
+		}
+		else
+		{
+			is_cycle = false;
+			std::cout << "Loop not found\n";
+		}
+	}
+	return is_cycle;
+}
 
 #endif
